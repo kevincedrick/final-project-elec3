@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanye Quotes 🎤</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <header class="header">
+        <div class="header-top">
+          <h1>Kanye Quotes 🎤</h1>
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </div>
+        <p class="sub">Random wisdom from Kanye West via kanye.rest API</p>
+      </header>
+
+      <!-- Quote Display -->
+      <div id="quoteBox" class="quote-box">
+        <div class="quote-icon">"</div>
+        <p id="quoteText" class="quote-text">Click the button to get inspired...</p>
+        <div class="quote-footer">
+          <span class="quote-author">— Kanye West</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="getQuoteBtn" class="btn btn--primary">
+          <span id="btnText">Get Quote</span>
+          <span id="btnLoader" class="loader hidden"></span>
+        </button>
+        <button id="copyBtn" class="btn btn--secondary" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy
+        </button>
+        <button id="shareBtn" class="btn btn--secondary" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share
+        </button>
+      </div>
+
+      <!-- Status message -->
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <!-- Suggested Quotes -->
+      <div id="suggestedBox" class="suggested hidden">
+        <h3 class="suggested-title">Suggested Quotes</h3>
+        <div id="suggestedList" class="suggested-list"></div>
+        <button id="loadMoreBtn" class="btn btn--secondary btn--block">
+          <span id="loadMoreText">Load More</span>
+          <span id="loadMoreLoader" class="loader hidden"></span>
+        </button>
+      </div>
+
+      <!-- Quote History -->
+      <div id="historyBox" class="history hidden">
+        <h3 class="history-title">Recent Quotes</h3>
+        <div id="historyList" class="history-list"></div>
+        <button id="clearHistoryBtn" class="btn btn--danger btn--small">Clear History</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

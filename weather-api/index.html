@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <header class="header">
+        <div class="header-top">
+          <h1>Weather API</h1>
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </div>
+        <p class="sub">Search for a city or province to get current weather and a 5-day forecast.</p>
+      </header>
+
+      <div class="input-row">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter a city or province name"
+          autocomplete="off"
+        />
+        <button id="searchBtn" class="btn-primary">Search</button>
+      </div>
+
+      <!-- Location choices -->
+      <select id="placeSelect" class="hidden" aria-label="Choose location"></select>
+
+      <!-- Status + Error -->
+      <p id="status" class="status" aria-live="polite"></p>
+      <div id="errorBox" class="error-box hidden" role="alert"></div>
+
+      <!-- Current Weather -->
+      <div id="weatherResult" class="weather hidden">
+        <div class="weather-main">
+          <div>
+            <h2 id="cityName"></h2>
+            <p id="country"></p>
+            <p id="description" class="description"></p>
+          </div>
+
+          <div class="temp-block">
+            <span id="temp" class="temp"></span>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+
+        <div class="weather-extra">
+          <div class="weather-item">
+            <span class="label">Feels like</span>
+            <span id="feelsLike"></span> °C
+          </div>
+          <div class="weather-item">
+            <span class="label">Humidity</span>
+            <span id="humidity"></span> %
+          </div>
+          <div class="weather-item">
+            <span class="label">Wind</span>
+            <span id="wind"></span> m/s
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-Day Forecast -->
+      <div id="forecastBox" class="forecast hidden">
+        <h3 class="forecast-title">5-Day Forecast</h3>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
